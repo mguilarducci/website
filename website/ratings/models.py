@@ -25,6 +25,7 @@ class Rating(models.Model):
         ordering = ['-created_at', 'sandwich', 'kind', 'score']
         verbose_name = _(u'avaliação')
         verbose_name_plural = _(u'avaliações')
+        unique_together = ('kind', 'user', 'sandwich')
 
     def __unicode__(self):
         return u'%.1f' % self.score
