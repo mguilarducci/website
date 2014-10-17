@@ -53,5 +53,5 @@ class RatingModelTest(TestCase):
             user=self.user,
             sandwich=self.sandwich
         )
-        
+
         self.assertRaises(IntegrityError, r.save)

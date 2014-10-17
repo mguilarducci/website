@@ -14,11 +14,11 @@ class Rating(models.Model):
         ('CB', _(u'Custo x Benefício')),
     )
 
+    sandwich = models.ForeignKey(Sandwich, verbose_name=_(u'Sanduíche'))
     score = models.DecimalField(_('score'), max_digits=2, decimal_places=1)
     description = models.TextField(_(u'descrição'), max_length=255)
     kind = models.CharField(_(u'área'), max_length=2, choices=KINDS)
     user = models.ForeignKey(User, verbose_name=_('avaliador'))
-    sandwich = models.ForeignKey(Sandwich, verbose_name=_(u'Sanduíche'))
     created_at = models.DateTimeField(_('criado em'), auto_now_add=True)
 
     class Meta:
